@@ -1,0 +1,343 @@
+/* Reset geral */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;      /* garante que ocupem toda a altura */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Georgia', serif;
+  background-color: white;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Corpo - fundo branco padrão para todas as páginas */
+body {
+  font-family: 'Georgia', serif;
+  background-color: white;  /* fundo branco */
+  background-image: none;    /* sem imagem */
+  color: #333;
+  line-height: 1.6;
+  padding: 0;
+  min-height: 100vh;
+  position: relative;
+  z-index: 1;
+}
+
+/* Página inicial - fundo com imagem */
+body.pagina-inicial {
+  background-color: transparent; /* remove fundo branco */
+  background-image: url('imagens/galeria/background.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: white;
+}
+
+body.pagina-inicial nav ul li a {
+  color: white;
+}
+
+body.pagina-inicial nav ul li a:hover {
+  color: #ddd; /* ou outra cor clara para o hover */
+}
+
+.container {
+  flex: 1; /* cresce e ocupa o espaço disponível */
+  max-width: 900px;
+  margin: 0 auto;    /* centralizar horizontalmente */
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.85);
+  border-radius: 8px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.1);
+  /* remove o margin-bottom: 40px para não empurrar o footer pra cima */
+}
+
+/* Cabeçalho */
+header {
+  text-align: center;
+  margin-bottom: 30px;
+  padding-top: 20px;
+}
+
+header h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.subtitulo {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+/* Navegação */
+nav {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  text-align: center; /* centraliza os links */
+}
+
+nav ul li {
+  display: inline-block;
+  margin: 0 12px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #555;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+nav ul li a:hover {
+  color: #111;
+}
+
+/* Frase */
+.frase {
+  text-align: center;
+  font-style: italic;
+  font-size: 1.3rem;
+  margin-top: 60px;
+  padding: 20px;
+  border-left: 4px solid #aaa;
+}
+
+small {
+  display: block;
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Rodapé */
+footer {
+  text-align: center;
+  margin-top: 60px;
+  padding-top: 20px;
+  border-top: 1px solid #ccc;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* Logo fixo */
+.logo-fixo {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 1000;
+}
+
+.logo-fixo img {
+  width: 40px;
+  height: auto;
+}
+
+/* Contato info */
+.contato-info {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-top: 30px;
+  color: #333;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contato-info p {
+  margin: 12px 0;
+  display: flex;
+  align-items: center;
+}
+
+.contato-info i {
+  margin-right: 10px;
+  color: #444;
+  min-width: 20px;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.contato-info a {
+  color: #0077cc;
+  text-decoration: none;
+}
+
+.contato-info a:hover {
+  text-decoration: underline;
+}
+
+/* Foto de perfil */
+.foto-perfil {
+  display: block;
+  margin: 20px auto;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Destaque */
+.highlight {
+  color: #0077cc;
+  font-weight: 700;
+}
+
+/* Objetivos lista */
+.objetivos-lista {
+  margin-top: 20px;
+  padding-left: 20px;
+  list-style: none;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.objetivos-lista li {
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Ícone check do FontAwesome */
+.objetivos-lista li::before {
+  content: "\f058";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  position: absolute;
+  left: 0;
+  top: 4px;
+  color: #0077cc;
+  font-size: 1rem;
+}
+
+.galeria {
+  padding: 2rem 0;
+}
+
+.grid-galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.foto-item {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  display: inline-block;
+  vertical-align: bottom;
+  width: 100%;
+  height: auto;
+  font-size: initial;
+}
+
+.foto-item:hover {
+  transform: scale(1.03);
+}
+
+.foto-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-bottom: 1px solid #ddd;
+  display: block;  /* Remove o espaço em branco abaixo da imagem */
+  font-size: 0;
+  overflow: hidden;
+}
+
+
+.descricao-foto {
+  padding: 0.5rem;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+
+.linha-do-tempo {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 0 20px;
+  font-family: 'Georgia', serif;
+}
+
+.linha-do-tempo h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #0077cc;
+}
+
+.evento {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 25px;
+  position: relative;
+  padding-left: 60px;
+}
+
+.evento::before {
+  content: '';
+  position: absolute;
+  left: 25px;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background-color: #0077cc;
+  border-radius: 2px;
+}
+
+.evento:last-child::before {
+  height: 20px;
+  bottom: auto;
+}
+
+.data {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 50px;
+  background-color: #0077cc;
+  color: white;
+  text-align: center;
+  font-weight: 700;
+  border-radius: 4px;
+  padding: 5px 0;
+  font-size: 0.9rem;
+}
+
+.conteudo h3 {
+  margin: 0 0 5px 0;
+  color: #333;
+}
+
+.conteudo p {
+  margin: 0;
+  color: #555;
+  font-size: 1rem;
+}
+
+.biografia ul {
+  list-style: none;
+  padding-left: 0;
+}
